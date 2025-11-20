@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BurgerFactory</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .bar {
+            width: 35px;
+            height: 5px;
+            background-color: rgb(255, 255, 255);
+            margin: 6px 0;
+        }
+        .videoplay {
+            text-align: center; 
+            margin: 20px 0; 
+        }
+        video {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            object-fit: cover;
+        }
+        .menuicon {
+            float: right;
+            cursor: pointer;
+            margin: 10px 20px;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 20px;
+            margin-right: 40px;
+            width: 90%;
+        }
+        .menubar {
+            background-color: rgb(14, 14, 14);
+            height: 70px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu a {
+            font-size: 18px;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            margin-left: 40px;
+            float: right;
+        }
+        .image {
+            display: flex;
+            gap: 10px;
+            margin-left:230px ;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .image img {
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .click {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .click div {
+            background-color: rgb(35, 34, 35);
+            border-radius: 25px;
+            width: 700px;
+            max-width: 1000px;
+            position: relative;
+            margin: 20px;
+            display: none;
+        }
+        .click img {
+            border-radius: 25px;
+            width: 100%;
+            height: auto ;
+        }
+        .click p {
+            position: absolute;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .click .title {
+            font-size: 40px;
+            margin-top: 20px;
+        }
+        .click span {
+            font-size: 25px;
+        }
+        .click ul {
+            font-size: 27px;
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+            float: right;
+            margin-right: 40px;
+            list-style-type:square;
+        }
+        .click li {
+            cursor: pointer;
+        }
+        #meat:hover {
+            color: rgb(136, 0, 0);
+        }
+        #tomato:hover {
+            color: rgb(255, 0, 0);
+        }
+        #lettuce:hover {
+            color: rgb(59, 239, 74);
+        }
+        #cheese:hover {
+            color: rgb(251, 255, 0);
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        footer{
+            background-color:rgb(41, 40, 40);
+            text-align: center;
+        }
+        footer div{
+            font-size: 25px;
+        }
+        footer span{
+            font-size: 15px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="menubar">
+        <h1>BurgerFactory</h1>
+        <div class="menuicon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="menu" id="menu">
+            <a class="a1" href="#">Our Stores</a>
+            <a class="a2" href="contact.html">Contact</a>
+            <a class="a3" href="about.html">About</a>
+        </div>
+    </div>
+
+    <div class="videoplay">
+        <video autoplay loop muted>
+            <source src="videoplayback.webm" type="video/webm">
+        </video>
+    </div>
+
+    <div class="image">
+        <div><button onclick="showDetails('click1')"><img src="cheeseburger-with-tomato-and-lettuce-on-wooden-board.webp" height="120px" width="140px" alt="Cheeseburger"></button></div>
+        <div><button onclick="showDetails('click2')"><img src="double-cheeseburger.webp" height="120px" width="140px" alt="Double Cheeseburger"></button></div>
+        <div><button onclick="showDetails('click3')"><img src="vegan burger.webp" height="120px" width="140px" alt="Vegan Burger"></button></div>
+        <div><button onclick="showDetails('click4')"><img src="bacon-burger.webp" height="120px" width="140px" alt="Bacon Burger"></button></div><p>we have plenty of burgers and here's some of our most selled product. <br>visit us and taste thr burger from its factory</p>
+    </div>
+
+    <div class="click">
+        <div class="click1" id="click1">
+            <img src="cheeseburger-with-tomato-and-lettuce-on-wooden-board.webp" alt="Cheeseburger">
+            <p class="title">Cheeseburger<br><span >15&#36;</span></p>
+            <ul>
+                <li id="meat">Meat</li>
+                <li id="tomato">Tomato</li>
+                <li id="lettuce">Lettuce</li>
+                <li id="cheese">Cheese</li>
+            </ul>
+        </div>
+        <div class="click2" id="click2">
+            <img src="double-cheeseburger.webp" alt="Double Cheeseburger">
+            <p class="title">Double cheeseburger <br><span >25&#36;</span></p>
+            <ul>
+                <li id="meat">Meat</li>
+                <li id="tomato">Tomato</li>
+                <li id="lettuce">Lettuce</li>
+                <li id="cheese">Double-Cheese</li>
+            </ul>
+        </div>
+        <div class="click3" id="click3">
+            <img src="vegan burger.webp" alt="Vegan Burger">
+            <p class="title">Vegan Burger<br><span >16&#36;</span></p>
+            <ul>
+                <li id="tomato">Tomato</li>
+                <li id="lettuce">Lettuce</li>
+                <li id="cheese">Cheese</li>
+            </ul>
+        </div>
+        <div class="click4" id="click4">
+            <img src="bacon-burger.webp" alt="Bacon Burger">
+            <p class="title">Bacon Burger<br><span >17&#36;</span></p>
+            <ul>
+                <li id="meat">Bacon</li>
+                <li id="tomato">Tomato</li>
+                <li id="lettuce">Lettuce</li>
+                <li id="cheese">Cheese</li>
+            </ul>
+        </div>
+    </div>
+<footer>
+    <div>Qui nous aime, nous suive !</div>
+  <span >TM & Copyright 2024 Burger King Company LLC. All Rights Reserved.I Do Not Sell Or Share My Personal Information</span>
+</footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function showDetails(id) {
+            const clickDivs = document.querySelectorAll('.click > div');
+            clickDivs.forEach(div => {
+                div.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
